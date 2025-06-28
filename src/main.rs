@@ -15,8 +15,7 @@ June 2025.
 mod mdsops;
 mod mdsobj;
 
-// use cuda::runtime::*;
-// use rand::Rng;
+
 use mdsops::mds_ops;
 use mdsobj::mds_obj;
 
@@ -43,8 +42,8 @@ fn main() {
 
 
    //Bounds for benchmarking functions
-   let xmini:Vec<f32> = vec![-100.0,-30.0,-5.12,-600.0,-20.0,-8.0,-10.0,-10.0,-4.0,-10.0,-10.0,-100.0,-65.536,-500.0];
-   let xmaxi:Vec<f32> = vec![100.0,30.0,5.12,600.0,30.0,8.0,10.0,10.0,5.0,10.0,10.0,100.0,65.536,500.0];
+   let xmini:Vec<f32> = vec![-100.0,-30.0,-5.12];//to-do the rest benchmarks: ,-600.0,-20.0,-8.0,-10.0,-10.0,-4.0,-10.0,-10.0,-100.0,-65.536,-500.0];
+   let xmaxi:Vec<f32> = vec![100.0,30.0,5.12];//to-do the rest benchmarks: 600.0,30.0,8.0,10.0,10.0,5.0,10.0,10.0,100.0,65.536,500.0];
 
 
 
@@ -59,7 +58,7 @@ fn main() {
        //maxfevs: 10000000,
        //nfpar: 0,
        dim: 100,
-       bench: 2,
+       bench: 1,
        xmin: Vec::new(),
        xmax: Vec::new(),
    };

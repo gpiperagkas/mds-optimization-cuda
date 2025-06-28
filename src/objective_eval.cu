@@ -51,8 +51,6 @@ extern "C" void objective(float *simplex, float *fsimplex, int n, int benchmark)
     int solution[n-1];
     if (benchmark==0){
         evaluate_simplex_sphere<<<blocks_per_grid, threads_per_block>>>(simplex, fsimplex, n);
-        for (int j=0;j<n-1;j++)
-            solution[j]=0;
     }else if (benchmark==1){
         evaluate_simplex_rosenbrock<<<blocks_per_grid, threads_per_block>>>(simplex, fsimplex, n);
     }else if (benchmark==2){
