@@ -1,0 +1,8 @@
+[package]
+name = "mds-optimization-cuda"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+cuda = { version = "0.4.0-pre.2", features = ["cuda_10_1"] }
+rand = "0.9.1"  
