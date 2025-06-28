@@ -79,7 +79,7 @@ pub mod mds_ops{
             refsimplex.push(tmprefsimplex);
         };
         refsimplex = check_bounds(&probparams, &mut refsimplex);
-        let mut frsimplex = mds_obj::objeval(&probparams, &mut refsimplex);
+        let mut frsimplex = mds_obj::objeval(&probparams, &refsimplex);
         *fevs += probparams.dim+1;
         (refsimplex,frsimplex) = sortsimplex(&mut refsimplex, &mut frsimplex);
         (refsimplex,frsimplex)
@@ -96,7 +96,7 @@ pub mod mds_ops{
             expasimplex.push(tmpexpasimplex);
         };
         expasimplex = check_bounds(&probparams, &mut expasimplex);
-        let mut fexpasimplex = mds_obj::objeval(&probparams, &mut expasimplex);
+        let mut fexpasimplex = mds_obj::objeval(&probparams, &expasimplex);
         *fevs += probparams.dim+1;
         (expasimplex,fexpasimplex) = sortsimplex(&mut expasimplex, &mut fexpasimplex);
         (expasimplex,fexpasimplex)
@@ -113,7 +113,7 @@ pub mod mds_ops{
             contrsimplex.push(tmpcontrsimplex);
         };
         contrsimplex = check_bounds(&probparams, &mut contrsimplex);
-        let mut fcontrsimplex = mds_obj::objeval(&probparams, &mut contrsimplex);
+        let mut fcontrsimplex = mds_obj::objeval(&probparams, &contrsimplex);
         *fevs += probparams.dim+1;
         (contrsimplex,fcontrsimplex) = sortsimplex(&mut contrsimplex, &mut fcontrsimplex);
         (contrsimplex,fcontrsimplex)
