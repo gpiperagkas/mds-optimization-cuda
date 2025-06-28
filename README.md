@@ -12,4 +12,4 @@ computational efficiency.
 
 To-do: Add more objective functions for benchmarking. Propose functionality to aleviate the problem of getting stuck in local minima.
 
-This software is intented for non-commercial usage, and is licensed under a BSD 3-clause license.
+This software is intented for non-commercial purposes, and is licensed under a BSD 3-clause license.
