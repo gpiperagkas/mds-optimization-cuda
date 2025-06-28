@@ -70,9 +70,6 @@ fn main() {
        probparams.xmax = vec![boundmax; probparams.dim];
    }
 
-   //-------------------------
-   // DEFINE ALL PROBLEM DATA
-   //-------------------------
 
    let mut simplex: Vec<Vec<f32>>;
    let mut fsimplex: Vec<f32>;
@@ -100,6 +97,7 @@ fn main() {
        //Reflection
        (refl, frefl) = mds_ops::reflection(&probparams, &simplex, &mut fevs);
        if frefl[0] < fsimplex[0]{
+           //Expansion
            (expa, fexpa) = mds_ops::expansion(&probparams, &simplex, &mut fevs, &parameters);
            if fexpa[0] < frefl[0]{
                simplex = expa.clone();
@@ -109,6 +107,7 @@ fn main() {
                fsimplex = frefl.clone();
            } 
        }else{
+           //Contraction
            (contr, fcontr) = mds_ops::contraction(&probparams, &simplex, &mut fevs, &parameters);
            simplex = contr.clone();
            fsimplex = fcontr.clone();
